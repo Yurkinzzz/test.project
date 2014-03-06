@@ -32,13 +32,16 @@
 
             var time1 = document.getElementById("time1");
             var time2 = document.getElementById("time2");
+            var time3 = document.getElementById("time3");
             time1.innerHTML = (date + " " + month + " " + year + " г. - " + day + " - " + hours + ":" + minutes + ":" + seconds); // вывод даты в формате ДД Месяц ГГГГг. - День недели - ЧЧ:ММ:СС
             time2.innerHTML = (date + " " + month + " " + year + " г.");
+            time3.innerHTML = (day + " - " + hours + ":" + minutes + ":" + seconds);
         }
     </script>
 </head>
 <body>
 <p id="time1"></p>
 <p id="time2"></p>
+<p id="time3"></p>
 </body>
 </html>
