@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Time</title>
+    <script type="text/javascript">
+        window.onload = function () { // запуск функции получения времени сразу при загрузке
+            
+            var currentTime = new Date();
+
+            var date = currentTime.getDate(); // получение числа
+
+            var monthName = new Array(12); // создание массива с месяцами года
+            monthName[0] = "Января";
+            monthName[1] = "Февраля";
+            monthName[2] = "Марта";
+            monthName[3] = "Апреля";
+            monthName[4] = "Мая";
+            monthName[5] = "Июня";
+            monthName[6] = "Июля";
+            monthName[7] = "Августа";
+            monthName[8] = "Сентября";
+            monthName[9] = "Октября";
+            monthName[10] = "Ноября";
+            monthName[11] = "Декабря";
+            var month = monthName[currentTime.getMonth()]; //получение месяца
+
+            var year = currentTime.getFullYear(); // получение года
+
+            var weekDay = new Array(7); // создание массива с днями недели
+            weekDay[0] = "Воскресенье";
+            weekDay[1] = "Понедельник";
+            weekDay[2] = "Вторник";
+            weekDay[3] = "Среда";
+            weekDay[4] = "Четверг";
+            weekDay[5] = "Пятница";
+            weekDay[6] = "Суббота";
+            var day = weekDay[currentTime.getDay()]; // получение дня недели из массива
+
+            function addZero(i) { // приведение времени к виду 00
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            }
+
+            var hours = addZero(currentTime.getHours()); // получение часа
+            var minutes = addZero(currentTime.getMinutes()); // получение минут
+            var seconds = addZero(currentTime.getSeconds()); // получение секунд
+
+            var time = document.getElementById("time");
+            time.innerHTML = (date + " " + month + " " + year + " г. - " + day + " - " + hours + ":" + minutes + ":" + seconds); // вывод даты в формате ДД Месяц ГГГГг. - День недели - ЧЧ:ММ:СС
+        }
+    </script>
+</head>
+<body>
+<p id="time"></p>
+</body>
+</html>
